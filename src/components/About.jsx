@@ -1,3 +1,4 @@
+import React from 'react';
 import aboutImg from '../assets/about.png';
 import '../styles/About.css';
 

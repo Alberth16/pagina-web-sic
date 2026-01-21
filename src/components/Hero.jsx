@@ -1,3 +1,4 @@
+import React from 'react';
 import heroBg from '../assets/hero-bg.png';
 import '../styles/Hero.css';
 
