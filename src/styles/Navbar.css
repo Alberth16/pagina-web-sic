@@ -1,0 +1,129 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 10px 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: flex-end; /* Align links to the right */
+  align-items: center;
+  padding: 0 20px;
+  position: relative; /* Context for absolute logo */
+  min-height: 60px; /* Reserve space */
+}
+
+.logo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 10;
+}
+
+/* Initial State (Not Scrolled): Centered horizontally, but positioned above the text */
+.navbar:not(.scrolled) .logo {
+  top: 25vh; /* Moved further up to clear the text completely */
+  left: 50%;
+  transform: translate(-50%, -50%) scale(3);
+}
+
+/* Scrolled State: Standard Navbar Position */
+.navbar.scrolled .logo {
+  top: 50%;
+  left: 0; /* Align to left of container */
+  transform: translateY(-50%) scale(1);
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 20px; /* Space from links if needed */
+  z-index: 20;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .nav-content {
+     /* maintain relative positioning */
+  }
+  
+  .navbar:not(.scrolled) .logo {
+     transform: translate(-50%, -50%) scale(2); /* Smaller scale for mobile */
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    clip-path: circle(0% at 100% 0);
+    transition: clip-path 0.5s ease-in-out;
+  }
+
+  .nav-links.open {
+    clip-path: circle(150% at 100% 0);
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}

@@ -1,0 +1,115 @@
+.services {
+  background: #111827;
+}
+
+.center {
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  transition: transform 0.3s, background 0.3s;
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  position: relative; /* Needed for modal positioning */
+  overflow: visible; /* Allow modal to go outside if needed, but styling constraints might apply */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  background: rgba(40, 50, 70, 0.8);
+  border-color: var(--primary);
+  z-index: 10; /* Bring to front on hover */
+}
+
+.icon {
+  font-size: 3rem;
+  background: rgba(255,255,255,0.1);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  color: var(--text-main);
+}
+
+.service-card p {
+  color: var(--text-muted);
+}
+
+/* Modal Styles */
+.service-modal {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #1f2937;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  z-index: 20;
+  pointer-events: none; /* Prevent interacting when hidden */
+}
+
+.service-modal.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.service-modal h4 {
+  color: var(--accent);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 10px;
+}
+
+.service-modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-modal li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.service-modal li strong {
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 2px;
+}
+
+@media (min-width: 768px) {
+   /* On desktop, maybe position it differently if needed, 
+      but top: 100% works well for a dropdown-like effect */
+}

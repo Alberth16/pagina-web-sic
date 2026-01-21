@@ -1,4 +1,5 @@
 import aboutImg from '../assets/about.png';
+import '../styles/About.css';
 
 export default function About() {
   return (
@@ -33,6 +34,10 @@ export default function About() {
               <h3>Innovación</h3>
               <p>Siempre a la vanguardia, buscando las soluciones más modernas y eficientes.</p>
             </div>
+            <div className="value-card">
+              <h3>Flexibilidad</h3>
+              <p>Creación de aplicaciones a las necesidades del cliente.</p>
+            </div>
           </div>
         </div>
         <div className="about-image">
@@ -41,108 +46,6 @@ export default function About() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        .about-container {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 50px;
-          align-items: center;
-        }
-
-        .section-title {
-          font-size: 2.5rem;
-          margin-bottom: 2rem;
-        }
-
-        .highlight {
-          color: var(--accent);
-        }
-
-        .about p {
-          color: var(--text-muted);
-          margin-bottom: 2rem;
-          font-size: 1.1rem;
-        }
-
-        .mission-vision {
-          margin-bottom: 30px;
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .mv-item h4 {
-          color: var(--accent);
-          font-size: 1.2rem;
-          margin-bottom: 5px;
-        }
-
-        .mv-item p {
-          font-size: 1rem;
-          font-style: italic;
-          margin-bottom: 0;
-          border-left: 3px solid var(--secondary);
-          padding-left: 15px;
-        }
-
-        .values-grid {
-          display: grid;
-          gap: 20px;
-        }
-
-        .value-card {
-          background: var(--card-bg);
-          padding: 20px;
-          border-left: 4px solid var(--primary);
-          border-radius: 0 8px 8px 0;
-        }
-
-        .value-card h3 {
-          color: var(--text-main);
-          margin-bottom: 5px;
-        }
-
-        .value-card p {
-          margin-bottom: 0;
-          font-size: 0.95rem;
-        }
-
-        .img-wrapper {
-          position: relative;
-          border-radius: 20px;
-          overflow: hidden;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-          transform: perspective(1000px) rotateY(-10deg);
-          transition: transform 0.5s;
-        }
-
-        .img-wrapper:hover {
-          transform: perspective(1000px) rotateY(0deg);
-        }
-
-        .img-wrapper img {
-          width: 100%;
-          height: auto;
-          display: block;
-        }
-
-        @media (max-width: 900px) {
-          .about-container {
-            grid-template-columns: 1fr;
-            text-align: center;
-          }
-          
-          .values-grid {
-            text-align: left;
-          }
-
-          .img-wrapper {
-            transform: none;
-            margin-top: 30px;
-          }
-        }
-      `}</style>
     </section>
   );
 }
