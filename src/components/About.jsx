@@ -37,7 +37,7 @@ export default function About() {
             </div>
             <div className="value-card">
               <h3>Flexibilidad</h3>
-              <p>Creación de aplicaciones a las necesidades del cliente.</p>
+              <p>Nos adaptamos ágilmente a los requerimientos específicos de cada proyecto, ofreciendo soluciones personalizadas y escalables.</p>
             </div>
           </div>
         </div>
